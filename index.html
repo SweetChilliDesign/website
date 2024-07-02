@@ -9,6 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
 
         .header {
@@ -27,13 +28,13 @@
             font-size: 1.5em;
         }
 
-        .header .burger-menu {
-            display: none;
+        .burger-menu {
+            display: flex;
             flex-direction: column;
             cursor: pointer;
         }
 
-        .header .burger-menu div {
+        .burger-menu div {
             width: 25px;
             height: 3px;
             background-color: white;
@@ -66,6 +67,18 @@
             position: relative;
             animation-duration: 5s;
             animation-iteration-count: infinite;
+        }
+
+        .nav-menu li::after {
+            content: "";
+            display: block;
+            width: 80%;
+            height: 1px;
+            background-color: white;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .nav-menu li:nth-child(odd) {
@@ -112,6 +125,7 @@
         <li>Services</li>
         <li>Contact</li>
         <li>Blog</li>
+        <li>Portfolio</li>
     </ul>
 
     <script>
