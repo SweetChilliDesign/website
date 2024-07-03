@@ -1,0 +1,74 @@
+.fixed-height-container {
+    position: relative;
+    top: 100px; /* Adjust this value to set the distance from the top */
+    overflow: auto; /* Add overflow if needed */
+}
+
+.container {
+    display: flex;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+.container-reverse {
+    display: flex;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+.loop-text {
+    font-size: clamp(2.5rem, 8vw, 5.5rem);
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0 0.25em;
+    margin: 0; 
+}
+
+/* Default animation for other sections */
+.loop-text {
+    animation: loopText 5s infinite linear;
+}
+
+@keyframes loopText {
+    0% {
+        left: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Reversed animation for the Portfolio section */
+.container-reverse .loop-text {
+    animation: loopTextReverse 7s infinite linear;
+}
+
+@keyframes loopTextReverse {
+    100% {
+        left: translateX(100%);
+    }
+    0% {
+        transform: translateX(-100%);
+    }
+}
+
+p {
+    color: #F37778;
+    }
+
+hr {  
+    height: 2px;  
+    background-color: #F37778;  
+    border: none;  
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+}  
+
+a {
+    display: block;
+    text-decoration: none;
+}
