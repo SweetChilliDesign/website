@@ -3,137 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full-Screen Scrolling Menu</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #333;
-            padding: 10px 20px;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        .header .logo {
-            color: white;
-            font-size: 1.5em;
-        }
-
-        .burger-menu {
-            display: flex;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .burger-menu div {
-            width: 25px;
-            height: 3px;
-            background-color: white;
-            margin: 4px 0;
-        }
-
-        .nav-menu {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-        .nav-menu.active {
-            display: flex;
-        }
-
-        .nav-menu li {
-            list-style: none;
-            font-size: 2em;
-            color: white;
-            margin: 20px 0;
-            position: relative;
-            animation-duration: 5s;
-            animation-iteration-count: infinite;
-        }
-
-        .nav-menu li::after {
-            content: "";
-            display: block;
-            width: 80%;
-            height: 1px;
-            background-color: white;
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .nav-menu li:nth-child(odd) {
-            animation-name: scroll-left;
-        }
-
-        .nav-menu li:nth-child(even) {
-            animation-name: scroll-right;
-        }
-
-        @keyframes scroll-left {
-            0% { left: 100%; }
-            50% { left: 0%; }
-            100% { left: -100%; }
-        }
-
-        @keyframes scroll-right {
-            0% { right: 100%; }
-            50% { right: 0%; }
-            100% { right: -100%; }
-        }
-
-        @media (max-width: 768px) {
-            .header .burger-menu {
-                display: flex;
-            }
-        }
-    </style>
+    <title>Marquee Example</title>
+    <link rel="stylesheet" href="styles.css">
+    <body style="background-color: #282828;">
 </head>
 <body>
-
-    <header class="header">
-        <div class="logo">MyLogo</div>
-        <div class="burger-menu" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </header>
-
-    <ul class="nav-menu">
-        <li>Home</li>
-        <li>About</li>
-        <li>Services</li>
-        <li>Contact</li>
-        <li>Blog</li>
-        <li>Portfolio</li>
-    </ul>
-
-    <script>
-        function toggleMenu() {
-            const navMenu = document.querySelector('.nav-menu');
-            navMenu.classList.toggle('active');
-        }
-    </script>
-
+    <div class="fixed-height-container">
+        <hr />
+        <section class="container">
+            <a href="your-link-url"><p class="loop-text">Services</p></a>
+            <a href="your-link-url"><p class="loop-text">Services</p></a>
+            <a href="your-link-url"><p class="loop-text">Services</p></a>
+            <a href="your-link-url"><p class="loop-text">Services</p></a>
+        </section>
+        <hr />
+        <section class="container-reverse">
+            <p class="loop-text">Portfolio</p>
+            <p class="loop-text">Portfolio</p>
+            <p class="loop-text">Portfolio</p>
+        </section>
+        <hr />
+        <section class="container">
+            <p class="loop-text">About</p>
+            <p class="loop-text">About</p>
+            <p class="loop-text">About</p>
+            <p class="loop-text">About</p>
+            <p class="loop-text">About</p>
+        </section>
+        <hr />
+        <section class="container-reverse">
+            <p class="loop-text">Contact</p>
+            <p class="loop-text">Contact</p>
+            <p class="loop-text">Contact</p>
+            <p class="loop-text">Contact</p>
+        </section>
+        <hr />
+    </div>    
 </body>
 </html>
