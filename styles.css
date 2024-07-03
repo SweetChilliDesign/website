@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #131722;
+    background-color: #f7f8fd;
+    padding: 100px 0px;
+}
+
+h1 {
+    text-align: center;
+    margin-block-end: 2.5rem;
+}
+
+.stock-ticker {
+    font-size: 50px;
+    text-transform: uppercase;
+    padding-block: 8px;
+    border-block: 1px solid;
+    overflow: hidden;
+    user-select: none;
+    
+    display: flex;
+    gap: 40px;
+}
+
+.stock-ticker ul {
+    list-style: none;
+    flex-shrink: 0;
+    min-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+
+    animation: scroll 15s linear infinite;
+}
+
+.stock-ticker:hover ul {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    to {
+        transform: translateX(calc(-100% - 40px));
+    }
+}
+
+
+.stock-ticker-reverse {
+    font-size: 50px;
+    text-transform: uppercase;
+    padding-block: 8px;
+    overflow: hidden;
+    user-select: none;
+    
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 3rem;
+}
+
+.stock-ticker-reverse ul {
+    list-style: none;
+    flex-shrink: 0;
+    min-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+
+    animation: looptextreverse 15s linear infinite;
+}
+
+@keyframes looptextreverse {
+    to {
+        transform: translateX(calc(100% - 3rem));
+    }
+}
